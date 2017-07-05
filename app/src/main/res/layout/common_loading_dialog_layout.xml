@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rvLoading"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clickable="true"
+    android:gravity="center">
+
+    <!--<android.support.v4.widget.ContentLoadingProgressBar-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_centerInParent="true"-->
+        <!--style="?android:attr/progressBarStyleLargeInverse"/>-->
+    
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:padding="24dp"
+        android:background="@drawable/img_loading_view_bg">
+        
+        <ImageView
+            android:id="@+id/ivLoadingView"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            />
+        
+    </RelativeLayout>
+
+</RelativeLayout>

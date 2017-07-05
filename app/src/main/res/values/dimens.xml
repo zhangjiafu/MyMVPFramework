@@ -1,0 +1,82 @@
+<resources>
+
+    <!-- 共通留白 -->
+    <dimen name="common_padding_two_size">16dp</dimen>
+
+    <!-- 共通-页面各个边距 -->
+    <dimen name="common_margin_two_side">16dp</dimen>
+    <dimen name="common_margin_two_side_short">8dp</dimen>
+    <dimen name="common_margin_two_side_very_short">4dp</dimen>
+    <dimen name="common_margin_two_side_long_little">24dp</dimen>
+    <dimen name="common_margin_up_down">16dp</dimen>
+    <dimen name="common_margin_up_down_short">8dp</dimen>
+    <dimen name="common_margin_up_down_long">32dp</dimen>
+    <dimen name="common_margin_up_down_very_long">40dp</dimen>
+    <dimen name="common_margin_up_down_long_little">24dp</dimen>
+    <dimen name="common_margin_divider_left_with_icon">16dp</dimen>
+    <dimen name="common_margin_listview_icon_small_right">20dp</dimen>
+    <!-- 共通-控件大小 -->
+    <dimen name="common_width_button_bar">56dp</dimen>
+    <dimen name="common_width_icon_listview_item">40dp</dimen>
+    <dimen name="common_height_icon_listview_item">40dp</dimen>
+    <dimen name="common_height_menu_listview_item">48dp</dimen>
+    <dimen name="common_height_button">48dp</dimen>
+    <dimen name="common_height_button_seconddy">32dp</dimen>
+    <dimen name="common_height_editext">48dp</dimen>
+    <dimen name="common_height_appbar">?actionBarSize</dimen>
+    <dimen name="common_width_icon_small">24dp</dimen>
+    <dimen name="common_height_icon_small">24dp</dimen>
+    <dimen name="common_width_icon_big">48dp</dimen>
+    <dimen name="common_height_icon_big">48dp</dimen>
+    <dimen name="common_height_edittext_underline_normal">1dp</dimen>
+    <dimen name="common_height_edittext_underline_highlight">2dp</dimen>
+    <!-- 共通-圆角 -->
+    <dimen name="common_rounded_corners_small">2dp</dimen>
+    <dimen name="common_rounded_corners_middle">8dp</dimen>
+    <dimen name="common_rounded_corners_big">16dp</dimen>
+    <dimen name="common_rounded_corners_super_big">48dp</dimen>
+    <!--共通-阴影大小-->
+    <dimen name="common_elevation">2dp</dimen>
+    <!-- 各页面-控件大小 -->
+    <dimen name="m10_height_bill_listview_header">24dp</dimen>
+    <dimen name="m10_height_bill_listview_item">72dp</dimen>
+    <dimen name="m02_height_smscode_button">96dp</dimen>
+    <dimen name="m06_stationbar_height">360dp</dimen>
+
+    <dimen name="m06_subway_station_first_last_time_group_height">48dp</dimen>
+    <dimen name="m06_subway_station_first_last_time_item_height">32dp</dimen>
+
+    <!-- 字体大小定义 -->
+    <dimen name="common_textsize_lite">10dp</dimen>
+    <dimen name="common_textsize_small">12dp</dimen>
+    <dimen name="common_textsize_normal">14dp</dimen>
+    <dimen name="common_textsize_title_small">16dp</dimen>
+    <dimen name="common_textsize_title_big">24dp</dimen>
+    <dimen name="common_textsize_title_appbar">20dp</dimen>
+    <dimen name="common_textsize_big_16">16dp</dimen>
+    <dimen name="common_textsize_big_24">24dp</dimen>
+    <dimen name="common_textsize_big_34">34dp</dimen>
+    <dimen name="common_textsize_big_45">45dp</dimen>
+    <dimen name="common_textsize_big_56">56dp</dimen>
+    <dimen name="common_textsize_big_112">112dp</dimen>
+
+    <!--地图demo用-->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+
+    <dimen name="main_title_size">18sp</dimen>
+    <dimen name="second_title_size">16sp</dimen>
+    <dimen name="desc_title_size">12sp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="item_h">40dp</dimen>
+    <dimen name="line">0.5dp</dimen>
+    <dimen name="line_1dp">1dp</dimen>
+    <dimen name="ticket_btn_w">196dp</dimen>
+    <dimen name="ticket_btn_h">40dp</dimen>
+    <dimen name="btn_pad_v">4dp</dimen>
+    <dimen name="btn_pad_h">8dp</dimen>
+    <dimen name="settings_item">40dp</dimen>
+    <dimen name="person_pad_h">24dp</dimen>
+    <dimen name="tab_h">48dp</dimen>
+    <dimen name="btn_pad">8dp</dimen>
+</resources>
