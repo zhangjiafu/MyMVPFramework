@@ -134,6 +134,15 @@ public abstract class BaseActivity extends AppCompatActivity implements MvpView 
     }
 
 
+    /* *
+     * 显示一个内容为str的toast
+     *
+     * @param str
+     */
+    public void toast(String str) {
+        Toast.makeText(this, str, Toast.LENGTH_SHORT).show();
+    }
+
     protected abstract int getLayoutId();
 
     protected abstract void initData();

@@ -26,8 +26,8 @@ import java.util.List;
 
 public class BlogResponse {
 
-    @Expose
-    @SerializedName("status_code")
+    @Expose //该注解能够指定该字段是否能够序列化或者反序列化，默认的是都支持（true）。
+    @SerializedName("status_code") //该注解能指定该字段在JSON中对应的字段名称
     private String statusCode;
 
     @Expose
