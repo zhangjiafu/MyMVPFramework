@@ -37,7 +37,7 @@ public final class ApiClient {
     }
 
 
-    public static OkHttpClient createClient(){
+    private static OkHttpClient createClient(){
         OkHttpClient.Builder builder = new OkHttpClient().newBuilder().connectTimeout(DEFAULT_TIMEOUT, TimeUnit.SECONDS);
         if (BuildConfig.DEBUG) {
             HttpLoggingInterceptor httpLoggingInterceptor = new HttpLoggingInterceptor();

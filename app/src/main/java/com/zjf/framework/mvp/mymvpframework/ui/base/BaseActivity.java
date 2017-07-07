@@ -27,7 +27,7 @@ import butterknife.Unbinder;
  * Created by Administrator on 2017/5/25.
  */
 
-public class BaseActivity extends AppCompatActivity implements MvpView {
+public abstract class BaseActivity extends AppCompatActivity implements MvpView {
 
     private ProgressDialog mProgressDialog;
 
@@ -44,10 +44,16 @@ public class BaseActivity extends AppCompatActivity implements MvpView {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        getLayoutId();
+
         mActivityComponent = DaggerActivityComponent.builder()
                 .activityModule(new ActivityModule(this))
                 .applicationComponent(((MvpApp) getApplication()).getComponent())
                 .build();
+
+        //初始化数据
+        initData();
     }
 
     @Override
@@ -127,5 +133,9 @@ public class BaseActivity extends AppCompatActivity implements MvpView {
         textView.setTextColor(ContextCompat.getColor(this, R.color.white));
     }
 
+
+    protected abstract int getLayoutId();
+
+    protected abstract void initData();
 
 }
