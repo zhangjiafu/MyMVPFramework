@@ -19,9 +19,8 @@ import android.app.Application;
 import android.util.Log;
 
 import com.zjf.framework.mvp.mymvpframework.data.DataManager;
-import com.zjf.framework.mvp.mymvpframework.data.http.ApiClient;
-import com.zjf.framework.mvp.mymvpframework.data.http.ApiConstants;
-import com.zjf.framework.mvp.mymvpframework.data.http.configuration.ApiConfiguration;
+import com.zjf.framework.mvp.mymvpframework.data.network.ApiConstants;
+import com.zjf.framework.mvp.mymvpframework.data.network.configuration.ApiConfiguration;
 import com.zjf.framework.mvp.mymvpframework.di.component.ApplicationComponent;
 import com.zjf.framework.mvp.mymvpframework.di.component.DaggerApplicationComponent;
 import com.zjf.framework.mvp.mymvpframework.di.module.ApplicationModule;
@@ -59,7 +58,7 @@ public class MvpApp extends Application {
         ApiConfiguration apiConfiguration = ApiConfiguration.builder()
                 .dataSourceType(ApiConstants.WEATHER_DATA_SOURCE_TYPE_KNOW)
                 .build();
-        ApiClient.init(apiConfiguration);
+//        ApiHelper.init(apiConfiguration);
         Log.d(TAG, "onCreate end");
 
 //        AppLogger.init();

@@ -1,8 +1,7 @@
-package com.zjf.framework.mvp.mymvpframework.data.http.convert;
+package com.zjf.framework.mvp.mymvpframework.data.network.convert;
 
 import com.alibaba.fastjson.serializer.SerializeConfig;
 
-import java.io.IOException;
 import java.lang.annotation.Annotation;
 import java.lang.reflect.Type;
 

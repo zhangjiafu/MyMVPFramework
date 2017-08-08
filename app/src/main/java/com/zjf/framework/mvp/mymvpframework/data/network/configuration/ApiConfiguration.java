@@ -1,7 +1,7 @@
-package com.zjf.framework.mvp.mymvpframework.data.http.configuration;
+package com.zjf.framework.mvp.mymvpframework.data.network.configuration;
 
 
-import com.zjf.framework.mvp.mymvpframework.data.http.ApiConstants;
+import com.zjf.framework.mvp.mymvpframework.data.network.ApiConstants;
 
 /**
  * @author baronzhang (baron[dot]zhanglei[at]gmail[dot]com)

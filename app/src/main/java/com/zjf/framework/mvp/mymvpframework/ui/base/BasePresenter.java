@@ -1,7 +1,6 @@
 package com.zjf.framework.mvp.mymvpframework.ui.base;
 
 import com.zjf.framework.mvp.mymvpframework.data.DataManager;
-import com.zjf.framework.mvp.mymvpframework.utils.rx.SchedulerProvider;
 
 import javax.inject.Inject;
 
@@ -16,15 +15,15 @@ public class BasePresenter<T extends MvpView> implements MvpPresenter<T> {
     private static final String TAG = "BasePresenter";
 
     private final DataManager mDataManager;
-    private final SchedulerProvider mSchedulerProvider;
+//    private final SchedulerProvider mSchedulerProvider;
     private final CompositeDisposable mCompositeDisposable;
 
     private T mMvpView;
 
     @Inject
-    public BasePresenter(DataManager mDataManager, SchedulerProvider mSchedulerProvider, CompositeDisposable mCompositeDisposable) {
+    public BasePresenter(DataManager mDataManager,/* SchedulerProvider mSchedulerProvider,*/ CompositeDisposable mCompositeDisposable) {
         this.mDataManager = mDataManager;
-        this.mSchedulerProvider = mSchedulerProvider;
+//        this.mSchedulerProvider = mSchedulerProvider;
         this.mCompositeDisposable = mCompositeDisposable;
     }
 
@@ -69,9 +68,9 @@ public class BasePresenter<T extends MvpView> implements MvpPresenter<T> {
         return mDataManager;
     }
 
-    public SchedulerProvider getSchedulerProvider() {
-        return mSchedulerProvider;
-    }
+//    public SchedulerProvider getSchedulerProvider() {
+//        return mSchedulerProvider;
+//    }
 
     public CompositeDisposable getCompositeDisposable() {
         return mCompositeDisposable;

@@ -1,4 +1,4 @@
-package com.zjf.framework.mvp.mymvpframework.data.http.interceptor;
+package com.zjf.framework.mvp.mymvpframework.data.network.interceptor;
 
 import java.io.IOException;
 

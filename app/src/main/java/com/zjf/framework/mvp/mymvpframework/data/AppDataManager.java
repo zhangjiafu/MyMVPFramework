@@ -22,11 +22,6 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.zjf.framework.mvp.mymvpframework.data.db.DbHelper;
 import com.zjf.framework.mvp.mymvpframework.data.network.ApiHelper;
-import com.zjf.framework.mvp.mymvpframework.data.network.model.BlogResponse;
-import com.zjf.framework.mvp.mymvpframework.data.network.model.LoginRequest;
-import com.zjf.framework.mvp.mymvpframework.data.network.model.LoginResponse;
-import com.zjf.framework.mvp.mymvpframework.data.network.model.LogoutResponse;
-import com.zjf.framework.mvp.mymvpframework.data.network.model.OpenSourceResponse;
 import com.zjf.framework.mvp.mymvpframework.data.prefs.PreferencesHelper;
 import com.zjf.framework.mvp.mymvpframework.di.ApplicationContext;
 
@@ -61,84 +56,7 @@ public class AppDataManager implements DataManager {
     }
 
 
-//    @Override
-//    public String getAccessToken() {
-//        return mPreferencesHelper.getAccessToken();
-//    }
 
-
-    @Override
-    public Observable<LoginResponse> doGoogleLoginApiCall(LoginRequest.GoogleLoginRequest
-                                                                  request) {
-        return mApiHelper.doGoogleLoginApiCall(request);
-    }
-
-    @Override
-    public Observable<LoginResponse> doFacebookLoginApiCall(LoginRequest.FacebookLoginRequest
-                                                                    request) {
-        return mApiHelper.doFacebookLoginApiCall(request);
-    }
-
-    @Override
-    public Observable<LoginResponse> doServerLoginApiCall(LoginRequest.ServerLoginRequest
-                                                                  request) {
-        return mApiHelper.doServerLoginApiCall(request);
-    }
-
-    @Override
-    public Observable<LogoutResponse> doLogoutApiCall() {
-        return mApiHelper.doLogoutApiCall();
-    }
-
-   /* @Override
-    public int getCurrentUserLoggedInMode() {
-        return mPreferencesHelper.getCurrentUserLoggedInMode();
-    }
-
-    @Override
-    public void setCurrentUserLoggedInMode(LoggedInMode mode) {
-        mPreferencesHelper.setCurrentUserLoggedInMode(mode);
-    }*/
-
-    @Override
-    public Long getCurrentUserId() {
-        return mPreferencesHelper.getCurrentUserId();
-    }
-
-    @Override
-    public void setCurrentUserId(Long userId) {
-        mPreferencesHelper.setCurrentUserId(userId);
-    }
-
-    @Override
-    public String getCurrentUserName() {
-        return mPreferencesHelper.getCurrentUserName();
-    }
-
-    @Override
-    public void setCurrentUserName(String userName) {
-        mPreferencesHelper.setCurrentUserName(userName);
-    }
-
-    @Override
-    public String getCurrentUserEmail() {
-        return mPreferencesHelper.getCurrentUserEmail();
-    }
-
-    @Override
-    public void setCurrentUserEmail(String email) {
-        mPreferencesHelper.setCurrentUserEmail(email);
-    }
-
-    @Override
-    public String getCurrentUserProfilePicUrl() {
-        return mPreferencesHelper.getCurrentUserProfilePicUrl();
-    }
-
-    @Override
-    public void setCurrentUserProfilePicUrl(String profilePicUrl) {
-        mPreferencesHelper.setCurrentUserProfilePicUrl(profilePicUrl);
-    }
 
 
     @Override
@@ -150,14 +68,6 @@ public class AppDataManager implements DataManager {
             String email,
             String profilePicPath) {
 
-//        setAccessToken(accessToken);
-        setCurrentUserId(userId);
-//        setCurrentUserLoggedInMode(loggedInMode);
-        setCurrentUserName(userName);
-        setCurrentUserEmail(email);
-        setCurrentUserProfilePicUrl(profilePicPath);
-
-//        updateApiHeader(userId, accessToken);
     }
 
     @Override
@@ -194,13 +104,15 @@ public class AppDataManager implements DataManager {
         return null;
     }
 
-    @Override
-    public Observable<BlogResponse> getBlogApiCall() {
-        return mApiHelper.getBlogApiCall();
+    public DbHelper getDbHelper() {
+        return mDbHelper;
     }
 
-    @Override
-    public Observable<OpenSourceResponse> getOpenSourceApiCall() {
-        return mApiHelper.getOpenSourceApiCall();
+    public PreferencesHelper getPreferencesHelper() {
+        return mPreferencesHelper;
+    }
+
+    public ApiHelper getApiHelper() {
+        return mApiHelper;
     }
 }

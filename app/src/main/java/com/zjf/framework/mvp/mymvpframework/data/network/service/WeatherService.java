@@ -1,7 +1,9 @@
-package com.zjf.framework.mvp.mymvpframework.data.http.service;
+package com.zjf.framework.mvp.mymvpframework.data.network.service;
 
 
-import com.zjf.framework.mvp.mymvpframework.data.http.entity.know.KnowWeather;
+
+import com.zjf.framework.mvp.mymvpframework.data.network.entity.KnowWeather;
+import com.zjf.framework.mvp.mymvpframework.data.network.model.HttpResponse;
 
 import io.reactivex.Observable;
 import retrofit2.http.GET;
@@ -23,7 +25,7 @@ public interface WeatherService {
      * @return 天气数据
      */
     @GET("v1.0/weather/{cityId}")
-    Observable<KnowWeather> getKnowWeather(@Path("cityId") String cityId);
+    Observable<HttpResponse<KnowWeather>> getKnowWeather(@Path("cityId") String cityId);
 
 
 }

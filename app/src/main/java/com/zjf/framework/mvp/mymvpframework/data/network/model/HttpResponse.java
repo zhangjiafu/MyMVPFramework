@@ -17,20 +17,22 @@ package com.zjf.framework.mvp.mymvpframework.data.network.model;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
+import com.zjf.framework.mvp.mymvpframework.common.JsonUtils;
 
-/**
- * Created by janisharali on 08/01/17.
- */
 
-public class LogoutResponse {
+public class HttpResponse<T> {
 
-    @Expose
-    @SerializedName("status_code")
+    @Expose //该注解能够指定该字段是否能够序列化或者反序列化，默认的是都支持（true）。
+    @SerializedName("status_code") //该注解能指定该字段在JSON中对应的字段名称
     private String statusCode;
 
     @Expose
     @SerializedName("message")
     private String message;
+
+    @Expose
+    @SerializedName("data")
+    private T data;
 
     public String getStatusCode() {
         return statusCode;
@@ -48,23 +50,16 @@ public class LogoutResponse {
         this.message = message;
     }
 
-    @Override
-    public boolean equals(Object object) {
-        if (this == object) return true;
-        if (object == null || getClass() != object.getClass()) return false;
+    public T getData() {
+        return data;
+    }
 
-        LogoutResponse that = (LogoutResponse) object;
-
-        if (statusCode != null ? !statusCode.equals(that.statusCode) : that.statusCode != null)
-            return false;
-        return message != null ? message.equals(that.message) : that.message == null;
-
+    public void setData(T data) {
+        this.data = data;
     }
 
     @Override
-    public int hashCode() {
-        int result = statusCode != null ? statusCode.hashCode() : 0;
-        result = 31 * result + (message != null ? message.hashCode() : 0);
-        return result;
+    public String toString() {
+        return JsonUtils.objToJson(this);
     }
 }

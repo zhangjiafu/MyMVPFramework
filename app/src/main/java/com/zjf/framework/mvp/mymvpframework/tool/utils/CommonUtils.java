@@ -1,4 +1,4 @@
-/*
+package com.zjf.framework.mvp.mymvpframework.tool.utils;/*
  * Copyright (C) 2017 MINDORKS NEXTGEN PRIVATE LIMITED
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,7 +13,6 @@
  * limitations under the License
  */
 
-package com.zjf.framework.mvp.mymvpframework.utils;
 
 import android.annotation.SuppressLint;
 import android.app.ProgressDialog;
@@ -45,19 +44,6 @@ public final class CommonUtils {
 
     private CommonUtils() {
         // This utility class is not publicly instantiable
-    }
-
-    public static ProgressDialog showLoadingDialog(Context context) {
-        ProgressDialog progressDialog = new ProgressDialog(context);
-        progressDialog.show();
-        if (progressDialog.getWindow() != null) {
-            progressDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-        }
-        progressDialog.setContentView(R.layout.progress_dialog);
-        progressDialog.setIndeterminate(true);
-        progressDialog.setCancelable(false);
-        progressDialog.setCanceledOnTouchOutside(false);
-        return progressDialog;
     }
 
     @SuppressLint("all")

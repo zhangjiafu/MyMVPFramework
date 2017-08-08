@@ -1,4 +1,4 @@
-package com.zjf.framework.mvp.mymvpframework.data.http.convert;
+package com.zjf.framework.mvp.mymvpframework.data.network.convert;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.serializer.SerializeConfig;

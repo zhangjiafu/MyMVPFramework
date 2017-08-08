@@ -1,4 +1,4 @@
-/*
+package com.zjf.framework.mvp.mymvpframework.tool.utils;/*
  * Copyright (C) 2017 MINDORKS NEXTGEN PRIVATE LIMITED
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,7 +13,6 @@
  * limitations under the License
  */
 
-package com.zjf.framework.mvp.mymvpframework.utils;
 
 import android.content.Context;
 import android.net.ConnectivityManager;
@@ -32,7 +31,7 @@ import java.util.Enumeration;
  * Created by janisharali on 27/01/17.
  */
 
-public final class NetworkUtils {
+public  class NetworkUtil {
 
     public static int NET_CNNT_BAIDU_OK = 1; // NetworkAvailable
     public static int NET_CNNT_BAIDU_TIMEOUT = 2; // No NetworkAvailable
@@ -40,11 +39,8 @@ public final class NetworkUtils {
     public static int NET_ERROR = 4; // Net Error
     private static int TIMEOUT = 3000; // TIMEOUT
 
-    private NetworkUtils() {
-        // This utility class is not publicly instantiable
-    }
 
-    public static boolean isNetworkConnected(Context context) {
+    public  boolean isNetworkConnected(Context context) {
         ConnectivityManager cm =
                 (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
         NetworkInfo activeNetwork = cm.getActiveNetworkInfo();
@@ -56,7 +52,7 @@ public final class NetworkUtils {
      *
      * @return
      */
-    public static String getLocalIpAddress(Context context) {
+    public  String getLocalIpAddress(Context context) {
         String localIp = "";
         try {
             for (Enumeration<NetworkInterface> en = NetworkInterface.getNetworkInterfaces();
@@ -81,7 +77,7 @@ public final class NetworkUtils {
      *
      * @return
      */
-    public static int getNetState(Context context) {
+    public  int getNetState(Context context) {
         try {
             ConnectivityManager connectivity = (ConnectivityManager) context
                     .getSystemService(Context.CONNECTIVITY_SERVICE);
@@ -112,7 +108,7 @@ public final class NetworkUtils {
      *
      * @return
      */
-    private static boolean connectionNetwork(Context context) {
+    private  boolean connectionNetwork(Context context) {
         boolean result = false;
         HttpURLConnection httpUrl = null;
         try {
@@ -136,7 +132,7 @@ public final class NetworkUtils {
      *
      * @return boolean
      */
-    public static boolean is2G(Context context) {
+    public  boolean is2G(Context context) {
         ConnectivityManager connectivityManager = (ConnectivityManager) context
                 .getSystemService(Context.CONNECTIVITY_SERVICE);
         NetworkInfo activeNetInfo = connectivityManager.getActiveNetworkInfo();
@@ -154,7 +150,7 @@ public final class NetworkUtils {
      *
      * @return boolean
      */
-    public static boolean is3G(Context context) {
+    public  boolean is3G(Context context) {
         ConnectivityManager connectivityManager = (ConnectivityManager) context
                 .getSystemService(Context.CONNECTIVITY_SERVICE);
         NetworkInfo activeNetInfo = connectivityManager.getActiveNetworkInfo();
@@ -170,7 +166,7 @@ public final class NetworkUtils {
      *
      * @return boolean
      */
-    public static boolean isWifi(Context context) {
+    public  boolean isWifi(Context context) {
         ConnectivityManager connectivityManager = (ConnectivityManager) context
                 .getSystemService(Context.CONNECTIVITY_SERVICE);
         NetworkInfo activeNetInfo = connectivityManager.getActiveNetworkInfo();
@@ -184,7 +180,7 @@ public final class NetworkUtils {
     /**
      * check is wifi on
      */
-    public static boolean isWifiEnabled(Context context) {
+    public  boolean isWifiEnabled(Context context) {
         ConnectivityManager mgrConn = (ConnectivityManager) context
                 .getSystemService(Context.CONNECTIVITY_SERVICE);
         TelephonyManager mgrTel = (TelephonyManager) context

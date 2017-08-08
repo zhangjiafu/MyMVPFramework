@@ -2,6 +2,8 @@ package com.zjf.framework.mvp.mymvpframework.ui.base;
 
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.annotation.StringRes;
@@ -18,8 +20,7 @@ import com.zjf.framework.mvp.mymvpframework.R;
 import com.zjf.framework.mvp.mymvpframework.di.component.ActivityComponent;
 import com.zjf.framework.mvp.mymvpframework.di.component.DaggerActivityComponent;
 import com.zjf.framework.mvp.mymvpframework.di.module.ActivityModule;
-import com.zjf.framework.mvp.mymvpframework.utils.CommonUtils;
-import com.zjf.framework.mvp.mymvpframework.utils.NetworkUtils;
+import com.zjf.framework.mvp.mymvpframework.tool.ToolBox;
 
 import butterknife.Unbinder;
 
@@ -59,7 +60,7 @@ public abstract class BaseActivity extends AppCompatActivity implements MvpView 
     @Override
     public void showLoading() {
         hideLoading();
-        mProgressDialog = CommonUtils.showLoadingDialog(this);
+        mProgressDialog = showLoadingDialog(this);
     }
 
     @Override
@@ -102,7 +103,7 @@ public abstract class BaseActivity extends AppCompatActivity implements MvpView 
 
     @Override
     public boolean isNetworkConnected() {
-        return NetworkUtils.isNetworkConnected(getApplicationContext());
+        return ToolBox.getNetworkUtil().isNetworkConnected(getApplicationContext());
     }
 
     @Override
@@ -146,5 +147,25 @@ public abstract class BaseActivity extends AppCompatActivity implements MvpView 
     protected abstract int getLayoutId();
 
     protected abstract void initData();
+
+    /**
+     * 显示加载框
+     *
+     * @param context
+     */
+    public ProgressDialog showLoadingDialog(Context context) {
+        ProgressDialog progressDialog = new ProgressDialog(context);
+        if (progressDialog.getWindow() != null) {
+            progressDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        }
+        progressDialog.setContentView(R.layout.progress_dialog);
+        progressDialog.setIndeterminate(true);
+        progressDialog.setCancelable(false);
+        progressDialog.setCanceledOnTouchOutside(false);
+        progressDialog.show();
+
+        return progressDialog;
+    }
+
 
 }

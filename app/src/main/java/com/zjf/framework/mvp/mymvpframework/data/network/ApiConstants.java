@@ -1,4 +1,4 @@
-package com.zjf.framework.mvp.mymvpframework.data.http;
+package com.zjf.framework.mvp.mymvpframework.data.network;
 
 /**
  * @author baronzhang (baron[dot]zhanglei[at]gmail[dot]com)

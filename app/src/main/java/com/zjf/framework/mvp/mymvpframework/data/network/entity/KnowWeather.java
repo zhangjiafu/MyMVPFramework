@@ -1,4 +1,4 @@
-package com.zjf.framework.mvp.mymvpframework.data.http.entity.know;
+package com.zjf.framework.mvp.mymvpframework.data.network.entity;
 
 import java.util.List;
 
