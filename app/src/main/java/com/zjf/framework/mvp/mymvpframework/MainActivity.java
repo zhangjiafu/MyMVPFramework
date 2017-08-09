@@ -1,12 +1,12 @@
 package com.zjf.framework.mvp.mymvpframework;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-import com.zjf.framework.mvp.mymvpframework.ui.login.LoginContract;
+import com.zjf.framework.mvp.mymvpframework.ui.base.BaseActivity;
+import com.zjf.framework.mvp.mymvpframework.ui.login.LoginMvpView;
 
 
-public class MainActivity extends AppCompatActivity implements LoginContract.LoginView{
+public class MainActivity extends BaseActivity implements LoginMvpView{
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -14,6 +14,17 @@ public class MainActivity extends AppCompatActivity implements LoginContract.Log
         setContentView(R.layout.main_activity);
 
     }
+
+    @Override
+    protected int getLayoutId() {
+        return 0;
+    }
+
+    @Override
+    protected void initData() {
+
+    }
+
 
     @Override
     public String getUserName() {
@@ -24,7 +35,6 @@ public class MainActivity extends AppCompatActivity implements LoginContract.Log
     public String getPwd() {
         return null;
     }
-
 
     @Override
     public void loginFail(String failMsg) {
