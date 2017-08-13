@@ -1,4 +1,4 @@
-package com.zjf.framework.mvp.mymvpframework.tool.utils;/*
+package com.zjf.framework.mvp.mymvpframework.toolbox.tools;/*
  * Copyright (C) 2017 MINDORKS NEXTGEN PRIVATE LIMITED
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,15 +15,11 @@ package com.zjf.framework.mvp.mymvpframework.tool.utils;/*
 
 
 import android.annotation.SuppressLint;
-import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.res.AssetManager;
-import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
 import android.provider.Settings;
 
 
-import com.zjf.framework.mvp.mymvpframework.R;
 import com.zjf.framework.mvp.mymvpframework.constant.AppConstants;
 
 import java.io.IOException;

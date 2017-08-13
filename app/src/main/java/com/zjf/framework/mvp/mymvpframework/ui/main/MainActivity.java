@@ -1,23 +1,32 @@
-package com.zjf.framework.mvp.mymvpframework;
+package com.zjf.framework.mvp.mymvpframework.ui.main;
 
 import android.os.Bundle;
 
+import com.zjf.framework.mvp.mymvpframework.R;
 import com.zjf.framework.mvp.mymvpframework.ui.base.BaseActivity;
 import com.zjf.framework.mvp.mymvpframework.ui.login.LoginMvpView;
 
+import javax.inject.Inject;
 
-public class MainActivity extends BaseActivity implements LoginMvpView{
+import butterknife.ButterKnife;
+
+
+public class MainActivity extends BaseActivity implements MainMvpView{
+
+    @Inject
+    MainMvpPresenter<MainMvpView> mainMvpPresenter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.main_activity);
 
+        //注入
+        getActivityComponent().inject(this);
     }
 
     @Override
-    protected int getLayoutId() {
-        return 0;
+    protected int getLayoutResId() {
+        return R.layout.main_activity;
     }
 
     @Override
@@ -26,18 +35,5 @@ public class MainActivity extends BaseActivity implements LoginMvpView{
     }
 
 
-    @Override
-    public String getUserName() {
-        return null;
-    }
 
-    @Override
-    public String getPwd() {
-        return null;
-    }
-
-    @Override
-    public void loginFail(String failMsg) {
-
-    }
 }

@@ -3,6 +3,7 @@ package com.zjf.framework.mvp.mymvpframework.di.component;
 import android.app.Application;
 import android.content.Context;
 
+import com.zjf.framework.mvp.mymvpframework.MvpApp;
 import com.zjf.framework.mvp.mymvpframework.di.ApplicationContext;
 import com.zjf.framework.mvp.mymvpframework.di.module.ApplicationModule;
 
@@ -17,7 +18,7 @@ import dagger.Component;
 @Singleton
 @Component(modules = ApplicationModule.class)
 public interface ApplicationComponent {
-//    void inject(MvpApp app);
+    void inject(MvpApp app);
 //
 //    void inject(SyncService service);
 

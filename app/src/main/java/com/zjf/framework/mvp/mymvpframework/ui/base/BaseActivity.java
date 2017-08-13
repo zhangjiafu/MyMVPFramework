@@ -20,8 +20,9 @@ import com.zjf.framework.mvp.mymvpframework.R;
 import com.zjf.framework.mvp.mymvpframework.di.component.ActivityComponent;
 import com.zjf.framework.mvp.mymvpframework.di.component.DaggerActivityComponent;
 import com.zjf.framework.mvp.mymvpframework.di.module.ActivityModule;
-import com.zjf.framework.mvp.mymvpframework.tool.ToolBox;
+import com.zjf.framework.mvp.mymvpframework.toolbox.ToolBox;
 
+import butterknife.ButterKnife;
 import butterknife.Unbinder;
 
 /**
@@ -46,13 +47,15 @@ public abstract class BaseActivity extends AppCompatActivity implements MvpView 
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        getLayoutId();
+        setContentView(getLayoutResId());
 
         mActivityComponent = DaggerActivityComponent.builder()
                 .activityModule(new ActivityModule(this))
                 .applicationComponent(((MvpApp) getApplication()).getComponent())
                 .build();
 
+        //绑定
+        mUnbinder = ButterKnife.bind(this);
         //初始化数据
         initData();
     }
@@ -115,9 +118,9 @@ public abstract class BaseActivity extends AppCompatActivity implements MvpView 
         }
     }
 
-    public void setUnbinder(Unbinder unbinder) {
+   /* public void setUnbinder(Unbinder unbinder) {
         mUnbinder = unbinder;
-    }
+    }*/
 
     @Override
     protected void onDestroy() {
@@ -144,7 +147,7 @@ public abstract class BaseActivity extends AppCompatActivity implements MvpView 
         Toast.makeText(this, str, Toast.LENGTH_SHORT).show();
     }
 
-    protected abstract int getLayoutId();
+    protected abstract int getLayoutResId();
 
     protected abstract void initData();
 

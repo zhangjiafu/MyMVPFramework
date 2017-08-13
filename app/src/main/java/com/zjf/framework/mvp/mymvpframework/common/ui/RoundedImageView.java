@@ -13,7 +13,7 @@
  * limitations under the License
  */
 
-package com.mindorks.framework.mvp.ui.custom;
+package com.zjf.framework.mvp.mymvpframework.common.ui;
 
 import android.annotation.TargetApi;
 import android.content.Context;
@@ -30,14 +30,13 @@ import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
 import android.util.AttributeSet;
 import android.util.Log;
-import android.widget.ImageView;
 
 
 /**
  * Created by janisharali on 01/02/17.
  */
 
-public class RoundedImageView extends ImageView {
+public class RoundedImageView extends android.support.v7.widget.AppCompatImageView {
 
     private static final String TAG = "RoundedImageView";
 
@@ -53,11 +52,6 @@ public class RoundedImageView extends ImageView {
         super(context, attrs, defStyleAttr);
     }
 
-    @TargetApi(21)
-    public RoundedImageView(Context context, AttributeSet attrs,
-                            int defStyleAttr, int defStyleRes) {
-        super(context, attrs, defStyleAttr, defStyleRes);
-    }
 
     @Override
     protected void onDraw(Canvas canvas) {
@@ -82,7 +76,7 @@ public class RoundedImageView extends ImageView {
 
             if (drawable instanceof BitmapDrawable) {
                 Bitmap b = ((BitmapDrawable) drawable).getBitmap();
-                bitmap = b.copy(Bitmap.Config.ARGB_8888, true);
+                bitmap = b.copy(Config.ARGB_8888, true);
             } else if (drawable instanceof ColorDrawable) {
                 bitmap = Bitmap.createBitmap(w, h, Config.ARGB_8888);
                 Canvas c = new Canvas(bitmap);

@@ -1,4 +1,4 @@
-package com.mifpay.toolbox.tools;
+package com.zjf.framework.mvp.mymvpframework.toolbox.tools;
 
 import android.annotation.TargetApi;
 import android.content.ContentUris;

@@ -28,7 +28,7 @@ public class LoginActivity extends BaseActivity implements LoginMvpView {
     }
 
     @Override
-    protected int getLayoutId() {
+    protected int getLayoutResId() {
         return 0;
     }
 

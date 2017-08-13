@@ -1,4 +1,4 @@
-package com.mifpay.mifu.common.views;
+package com.zjf.framework.mvp.mymvpframework.common;
 
 import android.content.Context;
 import android.util.SparseArray;
@@ -7,10 +7,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
 
-import com.mifpay.mifu.R;
-import com.mifpay.toolbox.ToolBox;
+import com.zjf.framework.mvp.mymvpframework.R;
+
 
 /**
  * 系统BaseAdpater的扩展

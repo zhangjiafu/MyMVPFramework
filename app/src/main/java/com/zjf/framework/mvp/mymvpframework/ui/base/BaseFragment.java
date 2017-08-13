@@ -25,6 +25,7 @@ import android.view.View;
 
 import com.zjf.framework.mvp.mymvpframework.di.component.ActivityComponent;
 
+import butterknife.ButterKnife;
 import butterknife.Unbinder;
 
 /**
@@ -34,12 +35,13 @@ import butterknife.Unbinder;
 public abstract class BaseFragment extends Fragment implements MvpView {
 
     private BaseActivity mActivity;
-    private Unbinder mUnBinder;
+    private Unbinder mUnbinder;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setHasOptionsMenu(false);
+
     }
 
     @Override
@@ -49,6 +51,8 @@ public abstract class BaseFragment extends Fragment implements MvpView {
             BaseActivity activity = (BaseActivity) context;
             this.mActivity = activity;
 //            activity.onFragmentAttached();
+            //绑定
+            mUnbinder = ButterKnife.bind(mActivity);
         }
     }
 
@@ -111,16 +115,13 @@ public abstract class BaseFragment extends Fragment implements MvpView {
         return mActivity;
     }
 
-    public void setUnBinder(Unbinder unBinder) {
-        mUnBinder = unBinder;
-    }
 
     protected abstract void setUp(View view);
 
     @Override
     public void onDestroy() {
-        if (mUnBinder != null) {
-            mUnBinder.unbind();
+        if (mUnbinder != null) {
+            mUnbinder.unbind();
         }
         super.onDestroy();
     }
